@@ -3,15 +3,15 @@ from .models import Book
 
 class TestBookModel(TestCase):
     def setup(self):
-        self.book = Book.objects.create(title='A Sprinkle in Thyme', author='RL Burnside', year='1776')
+        self.book = Book.objects.create(title='A Sprinkle in Thyme', author='RL Burnside', year='1776', isbn='1234')
         Book.objects.create(title='My Cousin Lewis', author='John Ham', year='1969')
         Book.objects.create(title='The Lying, The Switch, and the War Robe', author='Beavis', year='2021')
-    
+
     def test_book_titles(self):
         self.assertEqual(self.book.title, 'A Sprinkle in Thyme')
 
     def test_book_detail(self):
-        book = Note.objects.get(title='A Sprinkle in Thyme')
+        book = Book.objects.get(title='A Sprinkle in Thyme')
         self.assertEqual(book.author, 'RL Burnside')
 
 class TestBookViews(TestCase):

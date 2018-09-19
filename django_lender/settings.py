@@ -32,6 +32,8 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 # Application definition
 
 INSTALLED_APPS = [
+    'django_lender',
+    'lender_books',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +85,7 @@ DATABASES = {
             'HOST': os.environ.get('DB_HOST'),
             'PORT': os.environ.get('DB_PORT', 5432),
             'TEST': {
-                'NAME': 'lender_test'
+                'NAME': 'lender_test',
             }
         }
     }

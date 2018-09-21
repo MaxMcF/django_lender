@@ -1,0 +1,52 @@
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0px;
+}
+
+li {
+  background-color: #8BAE91;  
+  padding: 16px 0px 16px 0px;
+  border-bottom: solid thin;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+h1{
+  text-align: center;
+}
+
+.books_list{
+  background-color: 334442;
+  border: black thin;
+  padding: 0px 3px;
+  border-radius: 5px;
+}
+
+.book_list_info {
+  background-color: 334442;
+  border-bottom: double black;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 0px
+}
+
+.book_list_info a{
+  color: #EAF5D8;
+}
+
+.book_detail{
+  border-bottom: double;
+  border-top: double;
+  margin-top: 55px;
+  padding-left: 20;
+  background-color: #334442;
+}
+.book_detail *{
+  background-color: #334442;
+  color: #EAF5D8;
+}
+

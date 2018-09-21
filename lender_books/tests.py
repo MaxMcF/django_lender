@@ -1,4 +1,4 @@
-from django.test import TestCase, RequestFactory
+from django.test import TestCase, RequestFactory, Client
 from .models import Book
 from django.contrib.auth.models import User
 from django.http.response import Http404
@@ -69,6 +69,23 @@ class TestBookViews(TestCase):
         with self.assertRaises(Http404):
             response = books_detail_view(request, f'{self.book_one.id}')
 
-            
+    # def test_book_detail_date_filter(self):
+    #     from .views import books_detail_view
+    #     request = self.request.get('')
+    #     request.user = self.user
+    #     response = books_detail_view(request, f'{self.book_one.id}')
+        
+    #     self.assertIn(b'Created: Today.', response.content)
+
+
+class TestLogin(TestCase):
+    def setUp(self):
+        self.c = Client()
+
+    def test_login_newly_made_user(self):
+        self.user = User.objects.create(username='tester', email='testinganother@web.com')
+        self.user.set_password('5555')
+        response = self.c.post('/login/', {'username': 'tester', 'password': '5555'})
+        self.assertEqual(200, response.status_code)
 
 
